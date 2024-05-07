@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+Заметка {{noteId}}
+{% endblock %}
+
+{% block body %}
+<div class="note-page-content">
+    <h1 class="outline-stroke">{{ note[1] }}</h1>
+    <h3 class="note-description outline-stroke">{{ note[2] }}</h3>
+</div>
+<div class="container note-page-container">
+    <a href="{{url_for('removeNoteFunc', noteId = noteId)}}" class="note-page-buttons">Удалить</a>
+    <a href="{{url_for('CheckRequestMethodEditNoteFunc', noteId = noteId)}}" class="note-page-buttons edit-button">Редактировать</a>
+</div>
+{% endblock %}

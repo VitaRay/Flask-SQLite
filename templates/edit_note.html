@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Редактирование заметки
+{% endblock %}
+
+{% block body %}
+<div class="container add-note-container">
+    <h2 class="add-note-title">Редактирование заметки</h2>
+    <form action="{{url_for('CheckRequestMethodEditNoteFunc', noteId = noteId)}}" method="POST">
+        <div class="mb-3">
+          <label class="form-label title-of-note" for="title">Введите новое название:</label><br>
+          <input maxlength="70" required class="form-control new-form-control" type="text" id="title" name="title" placeholder="Название..."></input>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label text-of-note">Введите новый текст заметки:</label><br>
+          <input required class="form-control" id="description" name="description" placeholder="Содержание..."></input>
+        </div>
+        <button type="submit" class="btn btn-primary add-note-btn">Отправить</button>
+      </form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Вход в аккаунт
+{% endblock %}
+
+{% block body %}
+<div class="container login-container">
+    <main class="form-signin w-100 m-auto">
+        <form action="{{url_for('checkRequestMethodLoginFunc')}}" method="POST">
+        <h1 class="h3 mb-3 fw-normal text-color-black">Вход в аккаунт</h1>
+
+        <div class="form-floating">
+            <input required type="text" class="form-control" name="userLogin" id="userLogin">
+            <label for="userLogin">Имя пользователя (Логин)</label>
+        </div>
+        <div class="form-floating">
+            <input required type="password" class="form-control" name="userPassword" id="userPassword">
+            <label for="userPassword">Пароль</label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Войти</button>
+        <p class="mt-5 mb-3 text-body-secondary">© Vita Ray Studio 2024г. Все права защищены</p>
+        </form>
+    </main>
+</div>
+{% endblock %}

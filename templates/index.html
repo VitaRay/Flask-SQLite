@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+<div class="container body-content index-content">
+    <h1 class ="title-note-list">Список заметок</h1>
+    <ol>
+        {% for note in notes %}
+            <li class="note-list">
+                <a class="link-note-list" href="{{url_for('CurrentNotePageFunc', noteId = note[0])}}">{{note[1]}}</a>
+            </li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}
